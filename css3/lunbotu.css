@@ -1,0 +1,70 @@
+ #dahezi {
+            position: absolute; /*--绝对定位，方便子元素的定位*/  
+            width: 700px;  
+            height: 500px;  
+            overflow: hidden;/*--相框作用，只显示一个图片---*/  
+            border-radius:5px;  
+        }  
+#photos img {  
+            float: left;  
+            width: 700px;  
+            height: 500px;  
+        }  
+#photos {
+            position: absolute;
+            z-index: 1;
+            width: calc(700px * 6);/*---修改图片数量的话需要修改下面的动画参数*/  
+        }  
+.play{  
+            animation: tp 5s ease-out infinite;/*动画效果，infinite无限次循环播放*/
+        }  
+        @keyframes tp {
+            0% {        margin-left: 0;      }
+            20% {       margin-left: -700px;    }  
+            40% {       margin-left: -1400px;    }  
+            60% {       margin-left: -2100px; } 
+            80% {      margin-left: -2800px;   }  
+            100%{   margin-left: -3500px; }
+        }
+
+
+.num{       /*图片右下角的数字显示*/
+            position:absolute;
+            z-index:10;  
+            right:5px;
+            top:470px;   
+            background:pink;  
+            width:20px;height:20px;  
+            line-height:20px;  
+            cursor:pointer;
+            color: white;
+            text-align:center;  
+            opacity:0.8;
+            animation: light  5s ease-out infinite;
+        }
+
+
+
+        /*将右下角数字与图片关联*/
+        .num:hover,#photos:hover{animation-play-state:paused;}
+        .num:nth-child(4){margin-right:30px} 
+        .num:nth-child(3){margin-right:60px}  
+        .num:nth-child(2){margin-right:90px}  
+        .num:nth-child(1){margin-right:120px}
+
+        .num:hover {
+            background-color: black;
+        }
+
+        #a1:hover ~ #photos{animation: tpLeft1 .1s ease-out forwards;}
+        #a2:hover ~ #photos{animation: tpLeft2 .1s ease-out forwards;}
+        #a3:hover ~ #photos{animation: tpLeft3 .1s ease-out forwards;}
+        #a4:hover ~ #photos{animation: tpLeft4 .1s ease-out forwards;}
+        #a5:hover ~ #photos {animation: tpLeft5 .1s ease-out forwards;}
+      
+        /*设置覆盖的位置宽度*/
+        @keyframes tpLeft1 { 100%{margin-left: 0;} }
+        @keyframes tpLeft2 { 100%{margin-left:-700px;} }
+        @keyframes tpLeft3 { 100%{margin-left:-1400px;} }
+        @keyframes tpLeft4 { 100%{margin-left:-2100px;} }
+        @keyframes tpLeft5 { 100%{margin-left:-2800px;} }
