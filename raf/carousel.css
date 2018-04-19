@@ -1,0 +1,22 @@
+*{padding:0;margin: 0 }
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.outer{width: 683px;height: 384px;overflow:hidden;position: relative;}
+.inner{
+    height:384px;list-style-type:none;width: 3415px;position: absolute;
+}
+.inner:after{height: 0;content: '';clear: both;visibility: hidden;}
+.inner li{float: left;width: 683px;height: 384px}
+li:nth-child(1){background: url("../Kris1.jpg") no-repeat; background-size: cover}
+li:nth-child(2){background: url("../Kris2.jpg") no-repeat; background-size: cover}
+li:nth-child(3){background: url("../Kris3.jpg") no-repeat; background-size: cover}
+li:nth-child(4){background: url("../Kris4.jpg") no-repeat; background-size: cover}
+li:nth-child(5){background: url("../Kris1.jpg") no-repeat; background-size: cover}
